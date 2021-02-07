@@ -64,7 +64,7 @@ https://github.com/EloisaFagundes/customer_success_balancing.git
 ```
 - Verifique se a gem do minitest está instalada, se não está, rode o comando abaixo.
 ```
-gem install minitest.
+gem install minitest
 ```
 - Agora, é só rodar o teste ;D.
 ```
