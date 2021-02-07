@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'timeout'
 
 class CustomerSuccessBalancing
-  # tipos de usuários
   def initialize(customer_success, customers, customer_success_away)
     @customer_success = customer_success
     @customers = customers
@@ -10,7 +9,6 @@ class CustomerSuccessBalancing
   end
 
   def filter_css
-    # Retira Cs de folga/doentes
     @customer_success_away.each do |cs|
       @customer_success.delete_if { |x| x[:id] == cs }
     end
@@ -19,7 +17,6 @@ class CustomerSuccessBalancing
   def find_cs(customer)
     filter_css
     condition = { has_difference: 0, find_id_cs: 0 }
-    # Acha o Cs baseado no score de ambos
     @customer_success.each { |cs|
       difference = cs[:score] - customer[:score]
       verify = condition[:find_id_cs] == 0 || difference < condition[:has_difference]
@@ -29,7 +26,6 @@ class CustomerSuccessBalancing
   end
 
   def cs_and_client_list
-    # Cria uma nova lista com os ids dos clientes e dos Css.
     @customers.map { |customer| { customer_id: customer[:id], cs_id: find_cs(customer) } }
   end
 
@@ -48,10 +44,9 @@ class CustomerSuccessBalancing
 
   # Returns the id of the CustomerSuccess with the most customers
   def execute
+    # Write your solution here
     list = cs_and_client_list
     winner(list)
-
-    # Write your solution here
   end
 end
 
