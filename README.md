@@ -55,3 +55,18 @@ Para este exemplo o retorno deve ser o id do 1 que é o CS que atende 4 clientes
 ```
 1
 ```
+
+## Para rodar a aplicação 
+
+- Clone o repositório.
+```
+https://github.com/EloisaFagundes/customer_success_balancing.git
+```
+- Verifique se a gem do minitest está instalada, se não está, rode o comando abaixo.
+```
+gem install minitest.
+```
+- Agora, é só rodar o teste ;D.
+```
+ruby customer_success_balancing.rb
+```
